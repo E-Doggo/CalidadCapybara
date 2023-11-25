@@ -97,3 +97,12 @@ When(/^I press the Submit button$/) do
   xpath = '/html/body/div/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[4]/td/input'
   find(:xpath, xpath).click
 end
+
+Given('I press the Continue button') do
+  xpath = '/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[14]/td/input'
+  find(:xpath, xpath).click
+end
+
+Then('the no flights available text should load') do
+  expect(page).to have_content("After flight finder - No Seats Avaialble")
+end
