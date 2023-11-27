@@ -1,7 +1,24 @@
-Given(/^I am on the Mercury Tours homepage$/) do
-     page.driver.browser.manage.window.maximize
-     visit('http://demo.guru99.com/test/newtours/')
+def flightsLoad()
+  @arrayRadio = ["oneway", "roundtrip", "Business", "First", "Coach"]
+  @arrayComboBox = ["fromPort", "fromMonth", "fromDay", "toPort", "toDay", "toMonth"]
+  expect(page).to have_content("Flight Details")
+  @arrayRadio.each do |value|
+    expect(page).to have_selector("input[type='radio'][value='#{value}']")
+  end
+  
+  @arrayComboBox.each do |value|
+    expect(page).to have_selector("select[name='#{value}']")
+  end
+end
 
+def signLoad()
+  
+end
+
+
+Given(/^I am on the Mercury Tours homepage$/) do
+  page.driver.browser.manage.window.maximize
+  visit('http://demo.guru99.com/test/newtours/')
 end
 
 Given(/^I click the "([^"]*)" link$/) do |linkText|
@@ -139,4 +156,16 @@ end
 Given('I select Return day to be on the {int} of {string}') do |int, string|
   select int.to_s, from: 'toDay'
   select string, from: 'toMonth'
+end
+
+Then('the {string} Page should load with all its components') do |string|
+  case string
+  when "Flights"
+    flightsLoad()
+  when "SIGN-ON"
+
+  when "REGISTER"
+
+  end
+  
 end

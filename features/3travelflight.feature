@@ -9,6 +9,7 @@ Scenario: Find A flight
     And I press the Continue button
     Then the no flights available text should load
 
+@radiobtns
 Scenario: Find A flight Only changing types of service
   Given I am on the Mercury Tours homepage
   And I click the "Flights" link
@@ -18,7 +19,7 @@ Scenario: Find A flight Only changing types of service
   And I press the Continue button
   Then the no flights available text should load
 
-@this
+@cbbox
 Scenario: Find A flight Only changing dates of flight
   Given I am on the Mercury Tours homepage
   And I click the "Flights" link
