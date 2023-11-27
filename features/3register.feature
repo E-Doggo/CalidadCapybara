@@ -22,7 +22,7 @@ Scenario: Register a user on site
 	And send my registration form
 	Then the confirmation screen is show
 	And my user name is "ANGYE"
-@only
+
 Scenario: Register a user on site with confirmation of an incorrect password      
 	Given I am on the Mercury Tours homepage
 	And I click the "Register" link
@@ -41,3 +41,13 @@ Scenario: Register a user on site with confirmation of an incorrect password
     |Confirm Password:  | aladjandr          |
 	And send my registration form
 	Then error "PAssword and con.password" is show
+@only 
+Scenario: Register a user on site with only valid user and password     
+	Given I am on the Mercury Tours homepage
+	And I click the "Register" link
+	When I enter the required fields as show below
+    |User Name: 	    | ANGYA              |
+    |Password:          | alejandra          | 
+    |Confirm Password:  | alejandra          |
+	And send my registration form
+	Then my user name is "ANGYA" 
