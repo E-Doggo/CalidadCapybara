@@ -50,4 +50,13 @@ Scenario: Register a user on site with only valid user and password
     |Password:          | alejandra          | 
     |Confirm Password:  | alejandra          |
 	And send my registration form
+	Then my user name is "ANGYA"
+
+Scenario: Register a user on site with only valid user     
+	Given I am on the Mercury Tours homepage
+	And I click the "Register" link
+	When I enter the required fields as show below
+    |User Name: 	    | ANGYA              |
+ 
+	And send my registration form
 	Then my user name is "ANGYA" 
