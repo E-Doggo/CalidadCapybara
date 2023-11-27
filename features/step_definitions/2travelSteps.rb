@@ -22,6 +22,12 @@ def registerLoad()
   end
 end
 
+def signLoad()
+  expect(page).to have_selector("input[name='userName']")
+  expect(page).to have_selector("input[name='password']")
+  expect(page).to have_selector("input[type='submit'][name='submit']")
+end
+
 
 Given(/^I am on the Mercury Tours homepage$/) do
   page.driver.browser.manage.window.maximize
@@ -170,7 +176,7 @@ Then('the {string} Page should load with all its components') do |string|
   when "Flights"
     flightsLoad()
   when "SIGN-ON"
-    sign
+    signLoad()
   when "REGISTER"
     registerLoad()
   end
