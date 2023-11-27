@@ -4,36 +4,10 @@ Feature: Verify the login feature on Mercury site
   I want to test that I can login to my account
 
 
-Scenario: Register a user on site        
+Scenario: TC1-SuccesfullLogin     
 	Given I am on the Mercury Tours login page
-	And I click the "Register" link
-	When I enter the required fields as show below
-	|First Name: 	    | Pepito             |
-    |Last Name: 	    | Perez              |
-    |Phone: 	        | 1234-567-12        |
-    |Email: 	        | pepe@pepazo.com    |
-    |Address:           | Av. America #123   |	
-    |City: 	            | Cochabamba         |
-    |State/Province:    | Cochabamba         | 	
-    |Postal Code: 	    | 9897               |
-    |Country: 	        | BOLIVIA            |
-    |User Name: 	    | Pepazo             |
-    |Password:          | ILoveQA            | 
-    |Confirm Password:  | ILoveQA            |
-	And send my registration form
-	Then the confirmation screen is show
-	And my user name is "Pepazo"
-
-
-Scenario: Find a flight with a register user
-    Given I am on the Mercury Tours homepage
-    And I enter my user and password
-    When I press the "Sign-In" button
-    Then the login successfully message is displayed
-
-Scenario: Register a user on site        
-	Given I am on the Mercury Tours homepage
-	And I click the "SIGN-ON" link
-	And I enter my user and password
-	When I press the Submit button
-    Then the login successfully message is displayed
+	When I enter the following information
+	|Username: 	        | amogus            |
+    |Password:          | amogus            | 
+	And send my login form
+	Then the login is succesfull
