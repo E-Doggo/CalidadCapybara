@@ -11,8 +11,15 @@ def flightsLoad()
   end
 end
 
-def signLoad()
+def registerLoad()
+  @array = ["firstName", "lastName", "phone", "userName", "address1", "city", "state", "postalCode", "email", "password", "confirmPassword"]
+  expect(page).to have_content("Contact Information")
+  expect(page).to have_content("Mailing Information")
+  expect(page).to have_content("User Information")
   
+  @array.each do |value|
+    expect(page).to have_selector("input[name='#{value}']")
+  end
 end
 
 
@@ -163,9 +170,9 @@ Then('the {string} Page should load with all its components') do |string|
   when "Flights"
     flightsLoad()
   when "SIGN-ON"
-
+    sign
   when "REGISTER"
-
+    registerLoad()
   end
   
 end
