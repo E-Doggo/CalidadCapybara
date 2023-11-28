@@ -2,10 +2,10 @@ Feature: Mercury Tours Verify Registration
     As a tester
     I want to test Mercury Tours registration page
     so I test that works correctly
-
+Background:
+    Given I am on the Mercury Tours homepage
 Scenario: Register a user on site        
-	Given I am on the Mercury Tours homepage
-	And I click the "Register" link
+	Given I click the "Register" link
 	When I enter the required fields as show below
 	|First Name: 	    | Angy               |
     |Last Name: 	    | Encinas            |
@@ -24,8 +24,7 @@ Scenario: Register a user on site
 	And my user name is "ANGYE"
 
 Scenario: Register a user on site with confirmation of an incorrect password      
-	Given I am on the Mercury Tours homepage
-	And I click the "Register" link
+	Given I click the "Register" link
 	When I enter the required fields as show below
 	|First Name: 	    | Angy               |
     |Last Name: 	    | Encinas            |
@@ -41,10 +40,9 @@ Scenario: Register a user on site with confirmation of an incorrect password
     |Confirm Password:  | aladjandr          |
 	And send my registration form
 	Then error "PAssword and con.password" is show
-@only 
+
 Scenario: Register a user on site with only valid user and password     
-	Given I am on the Mercury Tours homepage
-	And I click the "Register" link
+	Given I click the "Register" link
 	When I enter the required fields as show below
     |User Name: 	    | ANGYA              |
     |Password:          | alejandra          | 
@@ -53,8 +51,7 @@ Scenario: Register a user on site with only valid user and password
 	Then my user name is "ANGYA"
 
 Scenario: Register a user on site with only valid user     
-	Given I am on the Mercury Tours homepage
-	And I click the "Register" link
+	Given I click the "Register" link
 	When I enter the required fields as show below
     |User Name: 	    | ANGYA              |
  
@@ -62,8 +59,7 @@ Scenario: Register a user on site with only valid user
 	Then my user name is "ANGYA" 
 
 Scenario: Register a user on site with a special character in password        
-	Given I am on the Mercury Tours homepage
-	And I click the "Register" link
+	Given I click the "Register" link
 	When I enter the required fields as show below
 	|First Name: 	    | Angy               |
     |Last Name: 	    | Encinas            |
@@ -82,8 +78,7 @@ Scenario: Register a user on site with a special character in password
 	And my user name is "ANGYE"
 
 Scenario: Register a user on site with a blank space in password        
-	Given I am on the Mercury Tours homepage
-	And I click the "Register" link
+	Given I click the "Register" link
 	When I enter the required fields as show below
 	|First Name: 	    | Angy               |
     |Last Name: 	    | Encinas            |
@@ -100,3 +95,12 @@ Scenario: Register a user on site with a blank space in password
 	And send my registration form
 	Then the confirmation screen is show
 	And my user name is "ANGYE"
+
+Scenario: Register a user on site without dates     
+	Given I click the "Register" link
+	When I enter the required fields as show below
+    |User Name: 	    |          |
+    |Password:          |          | 
+    |Confirm Password:  |          |
+	And send my registration form
+	Then error "Error" is show
