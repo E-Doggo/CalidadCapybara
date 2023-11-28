@@ -93,8 +93,7 @@ Scenario: Register a user on site with a blank space in password
     |Password:          |            | 
     |Confirm Password:  |            |
 	And send my registration form
-	Then the confirmation screen is show
-	And my user name is "ANGYE"
+	Then error "Error" is show
 
 Scenario: Register a user on site without dates     
 	Given I click the "Register" link
