@@ -4,9 +4,9 @@ Feature: Mercury Tours Verify Registration
     so I test that works correctly
 Background:
     Given I am on the Mercury Tours homepage
+    Then I click the "Register" link 
 Scenario: Register a user on site        
-	Given I click the "Register" link
-	When I enter the required fields as show below
+	Given I enter the required fields as show below
 	|First Name: 	    | Angy               |
     |Last Name: 	    | Encinas            |
     |Phone: 	        | 60793960           |
@@ -24,8 +24,7 @@ Scenario: Register a user on site
 	And my user name is "ANGYE"
 
 Scenario: Register a user on site with confirmation of an incorrect password      
-	Given I click the "Register" link
-	When I enter the required fields as show below
+	Given I enter the required fields as show below
 	|First Name: 	    | Angy               |
     |Last Name: 	    | Encinas            |
     |Phone: 	        | 60793960           |
@@ -42,8 +41,7 @@ Scenario: Register a user on site with confirmation of an incorrect password
 	Then error "PAssword and con.password" is show
 
 Scenario: Register a user on site with only valid user and password     
-	Given I click the "Register" link
-	When I enter the required fields as show below
+	Given I enter the required fields as show below
     |User Name: 	    | ANGYA              |
     |Password:          | alejandra          | 
     |Confirm Password:  | alejandra          |
@@ -51,16 +49,14 @@ Scenario: Register a user on site with only valid user and password
 	Then my user name is "ANGYA"
 
 Scenario: Register a user on site with only valid user     
-	Given I click the "Register" link
-	When I enter the required fields as show below
+	Given I enter the required fields as show below
     |User Name: 	    | ANGYA              |
  
 	And send my registration form
 	Then my user name is "ANGYA" 
 
 Scenario: Register a user on site with a special character in password        
-	Given I click the "Register" link
-	When I enter the required fields as show below
+	Given I enter the required fields as show below
 	|First Name: 	    | Angy               |
     |Last Name: 	    | Encinas            |
     |Phone: 	        | 60793960           |
@@ -78,8 +74,7 @@ Scenario: Register a user on site with a special character in password
 	And my user name is "ANGYE"
 
 Scenario: Register a user on site with a blank space in password        
-	Given I click the "Register" link
-	When I enter the required fields as show below
+	Given I enter the required fields as show below
 	|First Name: 	    | Angy               |
     |Last Name: 	    | Encinas            |
     |Phone: 	        | 60793960           |
@@ -96,8 +91,7 @@ Scenario: Register a user on site with a blank space in password
 	Then error "Error" is show
 
 Scenario: Register a user on site without dates     
-	Given I click the "Register" link
-	When I enter the required fields as show below
+	Given I enter the required fields as show below
     |User Name: 	    |          |
     |Password:          |          | 
     |Confirm Password:  |          |
