@@ -3,8 +3,8 @@ Feature: Mercury Tours Verify Registration
   As a registered customer
   I want to test the shoppping online options
 
-Bakcground:
-    Given I am on the Mercury Tours homepahe
+Background:
+    Given I am on the Mercury Tours homepage
 
 
 Scenario: Register a user on site        
