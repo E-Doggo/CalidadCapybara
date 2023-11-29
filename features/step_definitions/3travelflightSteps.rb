@@ -7,6 +7,10 @@ Then('the no flights available message should appear on screen') do
   expect(page).to have_content("After flight finder - No Seats Avaialble")
 end
 
+Then('an available flight should be found') do
+  expect(page).to have_content("10 Seats Avaialble")
+end
+
 
 Given('I pick the {string} button') do |string|
   newstring = string.downcase.gsub(/\s/, '')

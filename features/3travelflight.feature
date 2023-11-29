@@ -19,10 +19,11 @@ Scenario: Find A flight Only changing types of service
   And I press the Continue button
   Then the no flights available message should appear on screen
 
+@checkNoFlightsAvailable
 Scenario: Find A flight Only changing dates of flight
   Given I Select departure from "New York"
   And I select Arrival day to be on the 12 of "July"
   And I select Arrival to "Portland"
   And I select Return day to be on the 24 of "July"
   And I press the Continue button
-  Then the no flights available message should appear on screen
+  Then an available flight should be found
