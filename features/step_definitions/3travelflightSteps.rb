@@ -3,12 +3,12 @@ Given('I press the Continue button') do
   find(:xpath, xpath).click
 end
 
-Then('the no flights available text should load') do
+Then('the no flights available message should appear on screen') do
   expect(page).to have_content("After flight finder - No Seats Avaialble")
 end
 
 
-Given('I pick the {string} radio button') do |string|
+Given('I pick the {string} button') do |string|
   newstring = string.downcase.gsub(/\s/, '')
   find("input[type='radio'][value='#{newstring}']").choose
 end
