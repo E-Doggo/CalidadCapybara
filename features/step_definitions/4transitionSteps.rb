@@ -29,7 +29,7 @@ def signLoad()
 end
 
 
-Then('the {string} Page should load with all its components') do |string|
+Then('the {string} Page should be shown correctly with the following format') do |string, table|
   case string
   when "Flights"
     flightsLoad()
