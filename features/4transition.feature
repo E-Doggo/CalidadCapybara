@@ -3,34 +3,34 @@ Feature: Mercury Tours Verify transtition
   As an administrator
   I want to test the transtitions from the main page
 
-Scenario: Load Flights page
+Background:
     Given I am on the Mercury Tours homepage
-    And I click the "Flights" link
+
+Scenario: Load Flights page
+    When I click the "Flights" link
     Then the "Flights" Page should be shown correctly with the following format
     |Button             | Round trip         |
     |Button             | One Way            |
-    |Multiple selection | Passengers         |
-    |Multiple selection | Departing From     |
-    |Multiple selection | On Month           |
-    |Multiple selection | On Day             |	
-    |Multiple selection | Arriving In        | 	
-    |Multiple selection | Returning Month    |
-    |Multiple selection | Returning Day      |
+    |Deployable list    | Passengers         |
+    |Deployable list    | Departing From     |
+    |Deployable list    | On Month           |
+    |Deployable list    | On Day             |	
+    |Deployable list    | Arriving In        | 	
+    |Deployable list    | Returning Month    |
+    |Deployable list    | Returning Day      |
     |Button             | Economy Class      |
     |Button             | Business Class     | 
     |Button             | First Class        |
 
 Scenario: Load Sign-On page
-    Given I am on the Mercury Tours homepage
-    And I click the "SIGN-ON" link
+    When I click the "SIGN-ON" link
     Then the "SIGN-ON" Page should be shown correctly with the following format
     |Text             | User Name            |
     |Text             | Password             |
 
 
 Scenario: Load Register page
-    Given I am on the Mercury Tours homepage
-    And I click the "REGISTER" link
+    When I click the "REGISTER" link
     Then the "REGISTER" Page should be shown correctly with the following format
     |Text             |First Name 	          |
     |Text             |Last Name 	          |

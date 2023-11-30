@@ -1,6 +1,4 @@
 def flightsLoad()
-  @arrayRadio = ["oneway", "roundtrip", "Business", "First", "Coach"]
-  @arrayComboBox = ["fromPort", "fromMonth", "fromDay", "toPort", "toDay", "toMonth"]
   expect(page).to have_content("Flight Details")
   @arrayRadio.each do |value|
     expect(page).to have_selector("input[type='radio'][value='#{value}']")
@@ -97,7 +95,7 @@ end
 Then('the {string} Page should be shown correctly with the following format') do |string, table|
   case string
   when "Flights"
-    createArrayRegister(table)
+    createArrayFlights(table)
     flightsLoad()
   when "SIGN-ON"
     signLoad()
