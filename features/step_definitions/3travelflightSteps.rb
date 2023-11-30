@@ -11,10 +11,18 @@ Then('an available flight should be found') do
   expect(page).to have_content("10 Seats Avaialble")
 end
 
+Then('the page should show an alert that the dates are incorrect') do
+  expect(page).to have_selector('.alert', text: 'Invalid dates')
+end
+
 
 Given('I pick the {string} button') do |string|
   newstring = string.downcase.gsub(/\s/, '')
   find("input[type='radio'][value='#{newstring}']").choose
+end
+
+Given('I Select departure from {string}') do |string|
+  select string, from: 'fromPort'
 end
 
 When('I select {int} passangers') do |int|
@@ -27,9 +35,7 @@ When('I pick to fly on {string} Class') do |string|
   find("input[type='radio'][value='#{string}']").choose
 end
 
-Given('I Select departure from {string}') do |string|
-  select string, from: 'fromPort'
-end
+
 
 When('I select Arrival day to be on the {int} of {string}') do |int, string|
   select int.to_s, from: 'fromDay'
@@ -44,3 +50,6 @@ When('I select Return day to be on the {int} of {string}') do |int, string|
   select int.to_s, from: 'toDay'
   select string, from: 'toMonth'
 end
+
+
+
