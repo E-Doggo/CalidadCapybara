@@ -17,13 +17,13 @@ Given('I pick the {string} button') do |string|
   find("input[type='radio'][value='#{newstring}']").choose
 end
 
-Given('I select {int} passangers') do |int|
+When('I select {int} passangers') do |int|
   select int.to_s, from: 'passCount'
 end
 
 
 
-Given('I pick to fly on {string} Class') do |string|
+When('I pick to fly on {string} Class') do |string|
   find("input[type='radio'][value='#{string}']").choose
 end
 
@@ -31,16 +31,16 @@ Given('I Select departure from {string}') do |string|
   select string, from: 'fromPort'
 end
 
-Given('I select Arrival day to be on the {int} of {string}') do |int, string|
+When('I select Arrival day to be on the {int} of {string}') do |int, string|
   select int.to_s, from: 'fromDay'
   select string, from: 'fromMonth'
 end
 
-Given('I select Arrival to {string}') do |string|
+When('I select Arrival to {string}') do |string|
   select string, from: 'toPort'
 end
 
-Given('I select Return day to be on the {int} of {string}') do |int, string|
+When('I select Return day to be on the {int} of {string}') do |int, string|
   select int.to_s, from: 'toDay'
   select string, from: 'toMonth'
 end
