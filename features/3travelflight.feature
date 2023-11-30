@@ -23,6 +23,7 @@ Scenario: Find A flight Only changing dates of flight and place of origin and de
   And I press the Continue button
   Then an available flight should be found
 
+@checkNoFlightsAvailable
 Scenario: Find A flight Only changing dates of flight and place of origin and destination
   Given I Select departure from "New York"
   When I select Arrival day to be on the 30 of "July"
