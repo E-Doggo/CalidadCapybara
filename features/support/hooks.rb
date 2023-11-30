@@ -8,6 +8,7 @@ Before '@maximize' do
   page.driver.browser.manage.window.maximize
 end
 
+#Before running the hook one has to wait for the scenario to fail, this will take a few seconds
 After('@checkNoFlightsAvailable') do |scenario|
   begin
     if scenario.failed?

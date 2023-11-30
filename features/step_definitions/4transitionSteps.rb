@@ -95,7 +95,7 @@ end
 Then('the {string} Page should be shown correctly with the following format') do |string, table|
   case string
   when "Flights"
-    createArrayRegister(table)
+    createArrayFlights(table)
     flightsLoad()
   when "SIGN-ON"
     signLoad()
