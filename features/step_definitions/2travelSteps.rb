@@ -4,9 +4,7 @@ Given(/^I am on the Mercury Tours homepage$/) do
 
 end
 
-Given(/^I click the "([^"]*)" link$/) do |linkText|
-  click_link(linkText)
-end
+
 
 When(/^I enter the required fields as show below$/) do |table|
   data = table.rows_hash
@@ -50,9 +48,9 @@ When(/^send my registration form$/) do
 end
 
 Then(/^the confirmation screen is show$/) do
-  greeting = "Dear"+" "+@name+" "+@lastName 	
+  greeting = "Dear"+" "+@name+" "+@lastName
   expect(page).to have_content(greeting)
-  
+
 end
 
 Then(/^my user name is "([^"]*)"$/) do |userName|
@@ -63,9 +61,9 @@ Then(/^my user name is "([^"]*)"$/) do |userName|
   userNameLabel1 = find(:css, 'body > div:nth-child(5) > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(4) > td > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(3) > td > p:nth-child(3) > font > b').text
   userNameLabel2 = find(:xpath,'/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[3]/td/p[3]/font/b').text
   if (userNameLabel1 == userNameLabel2) & (labelText == userNameLabel1) & (labelText == userNameLabel2)
-    puts "Validation for user name: Passed"    
+    puts "Validation for user name: Passed"
   else
-    raise "Validation for user name: Failed"    
+    raise "Validation for user name: Failed"
     puts "Expected: "+labelText
     puts "Actual:"+userNameLabel1
   end
