@@ -6,7 +6,7 @@ Background:
     Given I am on the Mercury Tours login page
 
 
-Scenario: TC1-Succesfull login
+Scenario: Succesfull login
 	Given I am on the Mercury Tours login page
 	When I enter the following information
 	|Username: 	        | TC1            |
@@ -14,7 +14,7 @@ Scenario: TC1-Succesfull login
 	And send my login form
 	Then the login is succesfull
 
-Scenario: TC2-Failed login
+Scenario: Failed login
 	Given I am on the Mercury Tours login page
 	When I enter the following information
 	|Username: 	        | 1451814            |
@@ -22,7 +22,7 @@ Scenario: TC2-Failed login
 	And send my login form
 	Then the login is failed
 
-Scenario: TC3-Login without credentials     
+Scenario: Login without credentials     
 	Given I am on the Mercury Tours login page
 	When I enter the following information
 	|Username: 	        | |
@@ -30,7 +30,7 @@ Scenario: TC3-Login without credentials
 	And send my login form
 	Then the login is succesfull
 
-Scenario: TC4-No session is saved  
+Scenario: No session is saved  
 	Given I am on the Mercury Tours login page
 	When I enter the following information
 	|Username: 	        | TC1 |
