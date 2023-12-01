@@ -30,15 +30,14 @@ Scenario: TC3-Login without credentials
 	And send my login form
 	Then the login is succesfull
 
-@amogus
 Scenario: TC4-No session is saved  
 	Given I am on the Mercury Tours login page
 	When I enter the following information
 	|Username: 	        | TC1 |
     |Password:          | TC1 | 
 	And send my login form
-	Then the login is succesfull
-	Then the "SIGN-OFF" button is shown 
+	When the login is succesfull
+	And the "SIGN-OFF" button is shown 
 	And I click the "Home" button
 	Then the "SIGN-ON" button is shown
 	
